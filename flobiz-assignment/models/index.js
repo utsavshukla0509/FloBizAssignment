@@ -1,7 +1,7 @@
 const userTable = require("../models/user");
-// const orgTable = require("../models/org");
-// const orgMemberTable = require("../models/orgMember");
-// const requestTable = require("../models/request");
+const orgTable = require("../models/org");
+const orgMemberTable = require("../models/orgMember");
+const requestTable = require("../models/request");
 const { Client } = require('pg');
 require('dotenv').config();
 
@@ -28,7 +28,7 @@ async function execute(){
 async function initialiseTables(){
 
     let promises = [];
-    const tables = [userTable];
+    const tables = [];
     try{
         for(let i = 0;i < tables.length;i++){
             promises.push(
