@@ -11,11 +11,10 @@
 7. **[Fetch Organisation Details By priviledges](#fetchorg)**<br>
 8. **[Request For a member of Organisation](#requestorg)**<br>
 9. **[Update Organisation Details](#updateorg)**<br>
-10. **[Fetch Organisations By Date](#fetchorgbydate)**<br>
-11. **[Fetch Organisations By Name](#fetchorgbyname)**<br>
-12. **[Update Role in an Organisation](#updaterole)**<br>
-13. **[Fetch All Request of an Organisation](#fetchrequest)**<br>
-14. **[Update Request of an Organisation](#updaterequest)**<br>
+10. **[Fetch Organisations By Query](#fetchorgbyquery)**<br>
+11. **[Update Role in an Organisation](#updaterole)**<br>
+12. **[Fetch All Request of an Organisation](#fetchrequest)**<br>
+13. **[Update Request of an Organisation](#updaterequest)**<br>
 
 
 
@@ -146,9 +145,9 @@
         "message" : "Data is successfully updated"
     }
     ```
- <a name = "fetchorgbydate"></a>
+ <a name = "fetchorgbyquery"></a>
 
-10. ## Fetch Organisations By Date
+10. ## Fetch Organisations By Query
     #### GET &nbsp; /orgs
     
     ```   
@@ -172,35 +171,10 @@
        ]
     }
     ```
-<a name = "fetchorgbyname"></a>
 
-11. ## Fetch Organisations By Name
-    #### GET &nbsp; /orgs/name
-    
-    ```   
-    Response : {
-        orgList": [
-          {
-              "orgid": 8,
-              "createdon": "2021-04-17T08:20:07.403Z",
-              "createdby": "2",
-              "orgname": "xyz"
-          },
-          {
-              "orgid": 16,
-              "createdon": "2021-04-17T12:35:58.901Z",
-              "createdby": "5",
-              "orgname": "abc"
-          }
-          .
-          .
-          .
-       ]
-    }
-    ```
  <a name = "updaterole"></a>
  
- 12. ## Update Role in an Organisation
+ 11. ## Update Role in an Organisation
     #### PUT &nbsp; /org/:orgId/priviledge
     
     ```    
@@ -210,7 +184,7 @@
     ```
 <a name = "fetchrequest"></a>    
     
- 13. ## Fetch All Request of an Organisation
+ 12. ## Fetch All Request of an Organisation
     #### GET &nbsp; /request/:orgId"
     
     ```    
@@ -227,7 +201,7 @@
     ```
  <a name = "updaterequest"></a>
     
- 14. ## Update Request of an Organisation
+ 13. ## Update Request of an Organisation
     #### POST &nbsp; /request/:orgId/:memberId/:action
     
     ```    
