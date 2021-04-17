@@ -1,4 +1,4 @@
-const tableName = "orgInfo";
+const tableName = "org";
 
 const orgTable = `CREATE TABLE ${tableName} (
 orgId SERIAL PRIMARY KEY,

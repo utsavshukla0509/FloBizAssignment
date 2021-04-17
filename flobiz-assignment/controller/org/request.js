@@ -1,18 +1,22 @@
-class Add{
+class Request{
 
-    constructor(helper,requestRepo){
+    constructor(helper,requestRepo,orgMemberRepo){
         this.helper = helper;
+        this.requestRepo = requestRepo;
+        this.orgMemberRepo = orgMemberRepo;
         this.requestRepo = requestRepo;
     }
 
     async handleRequest(req, res){
 
         try{
-            const {userId,orgId} = req.body;
+            const orgId = req.params.orgId;
+            const userId = req.get("X-USERID");
 
-            const userRequestData = await this.requestRepo.getUserRequestDetailByUserIdAndOrgId(userId,orgId);
-            
-            if(userRequestData.rows.length === 0){
+            const orgMemberData = await this.orgMemberRepo.getOrgMemberDetailByOrgIdAndUserId(userId,orgId);
+            const requestData = await this.requestRepo.getUserRequestDetailByUserIdAndOrgId(userId,orgId);
+
+            if(orgMemberData.rows.length === 0 && requestData.rows.length === 0){
                 await this.requestRepo.create(userId,orgId);
                 return this.helper.writeResponse(null,{"msg" : "Request has been sent to given Organisation"},res);
             }
@@ -26,4 +30,4 @@ class Add{
 
 };
 
-module.exports = Add;
+module.exports = Request;

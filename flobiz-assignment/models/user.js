@@ -1,4 +1,4 @@
-const tableName = "userInfo";
+const tableName = "user";
 
 const userTable = `CREATE TABLE ${tableName} (
 userId SERIAL PRIMARY KEY,

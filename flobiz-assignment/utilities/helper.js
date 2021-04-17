@@ -12,7 +12,7 @@ class Helper {
                 return res.status(err.code).json({"msg": err.msg,"info" : err.data});
             }
             else{
-                return res.status(err.code).json({msg: err.msg,"info" : err.data || 'internal server error'});
+                return res.status(err.code).json({msg: err.msg});
             }
         } else{
             console.log('req has been sent with status: 200');
