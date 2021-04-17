@@ -25,13 +25,8 @@ class OrgRepo {
             return this.postgresClient.query(query);
         }
         
-        async getOrgDetailByCreatedOn(){
-            const query = `SELECT * FROM public.org ORDER BY "createdon" DESC;`;
-            return this.postgresClient.query(query);
-        }
-
-        async getOrgDetailByName(){
-            const query = `SELECT * FROM public.org ORDER BY "orgname" DESC;`;
+        async getOrgDetail(limit,offset,sortBy){
+            const query = `SELECT * FROM public.org ORDER BY "${sortBy}" DESC LIMIT ${limit} OFFSET ${offset};`;
             return this.postgresClient.query(query);
         }
 

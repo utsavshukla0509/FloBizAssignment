@@ -20,11 +20,7 @@ router.put("/org/:orgId",(req,res,next) => {
 });
 
 router.get("/orgs",(req,res,next) => {
-    req.container.resolve('fetchOrgByCreatedOnApi').handleRequest(req,res).catch(next);
-});
-
-router.get("/orgs/name",(req,res,next) => {
-    req.container.resolve('fetchOrgByNameApi').handleRequest(req,res).catch(next);
+    req.container.resolve('fetchOrgByQueryApi').handleRequest(req,res).catch(next);
 });
 
 
