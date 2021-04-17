@@ -5,7 +5,9 @@ const init = require("./models/index");
 require('dotenv').config();
 const container = require("./di");
 const passport = require('passport');
-require('./driver/passport')(passport)
+require('./driver/googlePassport')(passport)
+require('./driver/facebookPassport')(passport)
+
 
 
 //Routes
