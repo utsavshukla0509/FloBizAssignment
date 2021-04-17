@@ -33,6 +33,8 @@
                ------- createdOn
                ------- createdBy
                ------- name
+               INDEXES ----- createdBy, createdOn
+                       ----- createdBy, Name
                
    Org-Member Table ------- userId
                      ------- orgId
@@ -41,6 +43,7 @@
    Request Table ------- orgId
                   ------- userId
                   ------- requestedOn
+      
     ```
 
 <a name = "googleauth"></a>
@@ -56,7 +59,7 @@
     
 <a name = "facebookauth"></a>
 
-3. ## Google Auth
+3. ## Facebook Auth
     #### GET &nbsp; /auth/facebook
     
     ```    
