@@ -94,7 +94,7 @@
 <a name = "createorg"></a>
 
 6. ## Create Organisation
-    #### POST &nbsp; /org
+    #### POST &nbsp; /flobiz/org
     
     ```   
     Response : {
@@ -104,7 +104,7 @@
 <a name = "fetchorg"></a>
 
 7. ## fetch Organisation Details By priviledges
-    #### GET &nbsp; /org/:orgId
+    #### GET &nbsp; /flobiz/org/:orgId
     
     ```   
     Response : {
@@ -128,7 +128,7 @@
  <a name = "requestorg"></a>
 
 8. ## Request For a member of Organisation
-    #### POST &nbsp; /org/:orgId/request
+    #### POST &nbsp; /flobiz/org/:orgId/request
     
     ```   
     Response : {
@@ -138,7 +138,7 @@
  <a name = "updateorg"></a>
 
 9. ## Update Organisation Details
-    #### PUT &nbsp; /org/:orgId
+    #### PUT &nbsp; /flobiz/org/:orgId
     
     ```   
     Response : {
@@ -148,7 +148,7 @@
  <a name = "fetchorgbyquery"></a>
 
 10. ## Fetch Organisations By Query
-    #### GET &nbsp; /orgs
+    #### GET &nbsp; /flobiz/orgs?sortBy=orgname&limit=10&offset=1
     
     ```   
     Response : {
@@ -175,7 +175,7 @@
  <a name = "updaterole"></a>
  
  11. ## Update Role in an Organisation
-    #### PUT &nbsp; /org/:orgId/priviledge
+    #### PUT &nbsp; /flobiz/org/:orgId/priviledge
     
     ```    
     Response : {
@@ -185,7 +185,7 @@
 <a name = "fetchrequest"></a>    
     
  12. ## Fetch All Request of an Organisation
-    #### GET &nbsp; /request/:orgId"
+    #### GET &nbsp; /flobiz/request/:orgId"
     
     ```    
     Response : {
@@ -202,7 +202,7 @@
  <a name = "updaterequest"></a>
     
  13. ## Update Request of an Organisation
-    #### POST &nbsp; /request/:orgId/:memberId/:action
+    #### POST &nbsp; /flobiz/request/:orgId/:memberId/:action
     
     ```    
     Response : {
