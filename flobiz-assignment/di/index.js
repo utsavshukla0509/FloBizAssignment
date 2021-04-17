@@ -29,10 +29,9 @@ container.register('otpApi', asClass(require("../controller/user/otp"), getScope
 container.register('verifyApi', asClass(require("../controller/user/verify"), getScope()));
 
 //Org
-container.register('createApi', asClass(require("../controller/org/create"), getScope()));
-
-//Request
-container.register('addApi', asClass(require("../controller/request/add"), getScope()));
+container.register('createOrgApi', asClass(require("../controller/org/create"), getScope()));
+container.register('fetchOrgApi', asClass(require("../controller/org/fetch"), getScope()));
+container.register('requestOrgApi', asClass(require("../controller/org/request"), getScope()));
 
 
 

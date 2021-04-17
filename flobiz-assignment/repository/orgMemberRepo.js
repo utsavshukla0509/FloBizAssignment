@@ -7,10 +7,15 @@ class OrgMemberRepo {
         this.postgresClient = postgresClient;
     }
 
-        // async getOrgDetailByOrgnameAndUserId(orgName,userId){
-        //     const query = `SELECT * FROM public.orginfo WHERE orgname = '${orgName} AND createdby = ${userId}';`;
-        //     return this.postgresClient.query(query);
-        // }
+        async getOrgMemberDetailByUserId(userId,orgId){
+            const query = `SELECT * FROM public.orgmember WHERE userid = '${userId}';`;
+            return this.postgresClient.query(query);
+        }
+
+        async getOrgMemberDetailByOrgIdAndUserId(userId,orgId){
+            const query = `SELECT * FROM public.orgmember WHERE orgid = '${orgId}' AND userid = '${userId}';`;
+            return this.postgresClient.query(query);
+        }
     
     
         async createOrgMember(orgId,userId,role){
