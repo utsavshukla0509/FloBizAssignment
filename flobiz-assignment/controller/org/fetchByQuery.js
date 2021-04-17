@@ -1,4 +1,4 @@
-class FetchByName{
+class FetchByCreatedOn{
 
     constructor(orgRepo,helper, orgUtility,orgMemberRepo){
         this.orgRepo = orgRepo;
@@ -9,8 +9,10 @@ class FetchByName{
     async handleRequest(req, res){
 
         try{
+            const {offset,limit,sortBy} = req.query;
+            console.log(offset,limit,sortBy);
 
-            const orgData = await this.orgRepo.getOrgDetailByName();
+            const orgData = await this.orgRepo.getOrgDetail(limit,offset,sortBy);
             const orgDetail = orgData.rows;
             return this.helper.writeResponse(null,{orgList : orgDetail},res);
             
@@ -23,4 +25,4 @@ class FetchByName{
 
 };
 
-module.exports = FetchByName;
+module.exports = FetchByCreatedOn;
