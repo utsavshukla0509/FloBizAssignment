@@ -23,6 +23,11 @@ class OrgMemberRepo {
             return this.postgresClient.query(query);
         }
 
+        async updateRole(memberId,orgId,role){
+            const query = `UPDATE public.orgmember SET role = '${role}' WHERE orgid = '${orgId}' AND userid = '${memberId}';`;
+            return this.postgresClient.query(query);
+        }
+
     }
     
     module.exports = OrgMemberRepo;

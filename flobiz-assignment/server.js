@@ -11,6 +11,8 @@ require('./driver/passport')(passport)
 //Routes
 const userRoute = require("./routes/userRoute");
 const orgRoute = require("./routes/orgRoute");
+const requestRoute = require("./routes/requestRoute");
+const orgMemberRoute = require("./routes/orgMemberRoute");
 
 
 const app = express();
@@ -35,6 +37,8 @@ app.use(passport.session());
 
 app.use("/auth", userRoute);
 app.use("/flobiz",orgRoute);
+app.use("/flobiz",requestRoute);
+app.use("/flobiz",orgMemberRoute);
 
 
 app.listen(port, () => {

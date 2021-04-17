@@ -31,8 +31,17 @@ container.register('verifyApi', asClass(require("../controller/user/verify"), ge
 //Org
 container.register('createOrgApi', asClass(require("../controller/org/create"), getScope()));
 container.register('fetchOrgApi', asClass(require("../controller/org/fetch"), getScope()));
+container.register('fetchOrgByCreatedOnApi', asClass(require("../controller/org/fetchByCreatedOn"), getScope()));
+container.register('fetchOrgByNameApi', asClass(require("../controller/org/fetchByName"), getScope()));
 container.register('requestOrgApi', asClass(require("../controller/org/request"), getScope()));
+container.register('updateOrgApi', asClass(require("../controller/org/update"), getScope()));
 
+//Request
+container.register('fetchRequestApi', asClass(require("../controller/request/fetch"), getScope()));
+container.register('updateRequestApi', asClass(require("../controller/request/update"), getScope()));
+
+//OrgMember
+container.register('updateRoleApi', asClass(require("../controller/orgMember/priviledge"), getScope()));
 
 
 //Utility
