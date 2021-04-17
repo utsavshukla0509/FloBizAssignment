@@ -20,7 +20,7 @@ class Request{
                 await this.requestRepo.create(userId,orgId);
                 return this.helper.writeResponse(null,{"msg" : "Request has been sent to given Organisation"},res);
             }
-            return this.helper.writeResponse({msg : "Request already has been sent to given Organisation" ,code : 404},null,res);
+            return this.helper.writeResponse({msg : "Request already has been sent to given Organisation" ,code : 400},null,res);
         }
         catch(err){
             console.log(err);

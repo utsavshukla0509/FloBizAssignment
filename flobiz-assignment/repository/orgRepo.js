@@ -1,6 +1,3 @@
-
-
-
 class OrgRepo {
 
     constructor(postgresClient) {
@@ -21,7 +18,22 @@ class OrgRepo {
         async createOrg(orgName,userId){
             const query = `INSERT INTO public.org ("createdby","orgname") VALUES ('${userId}','${orgName}');`;
             return this.postgresClient.query(query);
-        } 
+        }
+
+        async updateOrg(orgName,createdBy,orgId){
+            const query = `UPDATE public.org SET orgname = '${orgName}', createdby = '${createdBy}' WHERE orgid = '${orgId}';`;
+            return this.postgresClient.query(query);
+        }
+        
+        async getOrgDetailByCreatedOn(){
+            const query = `SELECT * FROM public.org ORDER BY "createdon" DESC;`;
+            return this.postgresClient.query(query);
+        }
+
+        async getOrgDetailByName(){
+            const query = `SELECT * FROM public.org ORDER BY "orgname" DESC;`;
+            return this.postgresClient.query(query);
+        }
 
     }
     
